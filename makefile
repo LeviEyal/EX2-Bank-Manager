@@ -2,6 +2,7 @@
 CC = gcc
 FLAGS = -Wall
 AR = ar
+.PHONY: all clean
 
 all: main
 
@@ -17,10 +18,5 @@ main.o: main.c myBank.h
 myBank.o: myBank.c myBank.h
 	$(CC) $(FLAGS) -c myBank.c
 
-#Creates a static library
-mymaths: libMyBank.a
-
-.PHONY: all clean
-
 clean: 
-	rm -f *.o *.a *.so maind mains
+	rm -f *.o *.a main

@@ -13,7 +13,6 @@ int main() {
     double amount, interest;
     int account;
     char c = ' ';
-
     while (c != 'E'){
         printf("Enter the char of operation:\n");
         printf("'O': Open an account\n");
@@ -32,25 +31,31 @@ int main() {
                 printf("  |   Option 'O': Open bank account:\n");
                 printf("  |   Enter initial amount:");
                 if(scanf("%lf", &amount) == 1)
-                    open(amount);
+                    openAccount(amount);
                 else
-                printf("  |   Enter correct amount of money!\n");
+                    printf("  |   Enter correct amount of money!\n");
                 break;
 
             case 'B':
                 printf("  |   Option 'B': Check acoount balance:\n");
                 printf("  |   Enter account number: ");
-                scanf("%d", &account);
-                printBalance(account);
+                if(scanf("%d", &account) == 1)
+                    printBalance(account);
+                else 
+                    printf("  |   Enter correct account number!\n");
                 break;
 
             case 'D':
                 printf("  |   Option 'D': Deposit to account:\n");    
                 printf("  |   Enter account number: ");
-                scanf("%d", &account);
-                printf("  |   Enter initial amount: ");
-                scanf("%lf", &amount);
-                deposit(account, amount);
+                if(scanf("%d", &account) == 1){
+                    printf("  |   Enter initial amount: ");
+                    if(scanf("%lf", &amount) == 1)
+                        deposit(account, amount);
+                    else printf("  |   Enter correct amount of money!\n");
+                }
+                else
+                    printf("  |   Enter correct account number!\n");
                 break;
 
             case 'W':
@@ -66,14 +71,14 @@ int main() {
                 printf("  |   Option 'C': Close account:\n");
                 printf("  |   Enter account number: ");
                 scanf("%d", &account);
-                close(account);
+                closeAccount(account);
                 break;
 
             case 'I':
                 printf("  |   Option 'I': Add interest to all opened accounts:\n");
                 printf("  |   Enter initial amount: ");
                 scanf("%lf", &interest);
-                addInterest(interest);
+                addInterestToAllAccounts(interest);
                 break;
 
             case 'P':
