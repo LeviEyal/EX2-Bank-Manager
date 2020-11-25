@@ -25,6 +25,7 @@ int main() {
         printf("'E': Close all accounts and exit program\n");
         printf("Your choice: ");
         c = getchar();
+        while(getchar()!='\n');
         printf("\n   _______________________________________________________\n  |\n");
         switch (c) {
             case 'O':
@@ -95,7 +96,6 @@ int main() {
                 printf("  |   Type correct option..\n");
                 break;
         }
-        while(getchar()!='\n');
         printf("  |_______________________________________________________\n\n");
     }
     exitProgram(); 
