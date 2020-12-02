@@ -20,3 +20,6 @@ myBank.o: myBank.c myBank.h
 
 clean: 
 	rm -f *.o *.a main
+run: main
+	rm -f *.o *.a
+	./main

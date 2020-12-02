@@ -5,11 +5,11 @@
 * Bank Manager
 ****************************************************************************/
 
-void openAccount(double amount);
-void printBalance(int account);
-void deposit(int account, double amount);
-void withdrawal(int account, double amount);
-void closeAccount(int account);
-void addInterestToAllAccounts(double interest);
+void openAccount();
+void printBalance();
+void deposit();
+void withdrawal();
+void closeAccount();
+void addInterestToAllAccounts();
 void printAll();
 void exitProgram();
